@@ -1,0 +1,157 @@
+<!--This code was created by @WerDeveloper.
+Unauthorized copying, distribution, or modification of this code, in whole or in part, is strictly prohibited without prior written permission.
+Please do not remove or alter the credit to the original creator. If you wish to use this code for personal or commercial purposes, kindly contact the creator for permissions.
+Thank you for respecting the work and effort that went into creating this code. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WerDevelopers - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Photos/werdevs.png" alt="WeRDevelopers Logo" />
+            <h1>WeRDevelopers</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><b>Home</b></a></li>
+                <li><a href="#skill"><b>Skill</b></a></li>
+                <li><a href="#services"><b>Services</b></a></li>
+                <li><a href="#knowme"><b>know me</b></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="home-section">
+        <div class="profile-image"></div><br><br><br><br><br>
+        <div class="intro">
+            <h2>Hey, I'm <span id="name">"WeRdeveloper"</span>, a developer skilled in<br>
+                <span id="wrd"></span>
+            </h2>
+                <p id="home-txt">A developer with expertise in Python and web technologies. I create innovative solutions and exceptional user experiences. Skilled in both front-end and back-end development, I'm always ready for new challenges.</p>        
+            <div class="buttons">
+                <a href="#support" class="btn support-btn" onclick="openPopup()"><b>Support Me</b></a>
+                <a href="https://telegram.me/WerDeveloper" class="btn contact-btn"><b>Contact Me</b></a>
+            </div>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">&times;</span><br><br>
+                    <h3>Support me with any amount you choose!<br>Your contribution makes a difference!</h3>
+                    <div class="upi-logos">
+                        <img src="Photos/upi.png" alt="UPI App" class="logo logo">
+                    </div>
+                    <img src="Photos/QR CODE.jpg" alt="QR Code" class="qr-code">
+                    <p style="color: #000; font: inherit; font-weight: bold;">UPI ID: <span id="upi-id">dhirajbanik91@jio</span></p>
+                    <button class="copy-btn" onclick="copyUPI()"><strong>Copy UPI ID</strong></button>
+                </div>
+            </div>
+            
+        </div>
+    </section> 
+<!-- HDJD -->
+    <section id="skill">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2>My Skills</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="icons/fsd-projects.jpg" alt="#">
+                <img src="icons/py-project.jpeg" alt="#">
+                <img src="icons/java-project.png" alt="#">
+                <img src="icons/C++-project.jpg" alt="#">
+                <img src="icons/c-project.jpg" alt="#">
+                <img src="icons/pyev-projects.jpeg" alt="#">
+                <img src="icons/full stack.jpg" alt="#">
+            </div>
+            <i class="fa-duotone fa-solid fa-angles-left prev btn2"></i>
+            <i class="fa-duotone fa-solid fa-angles-right next btn2"></i>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2><b>My Services</b></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3><b>UI/UX Design</b></h3><br>
+                <p>We create user-friendly interfaces with a focus on the end-user experience.</p>
+            </div>
+            <div class="service-card">
+                <h3><b>Web Development</b></h3><br>
+                <p>Our team builds responsive, fast, and secure websites tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3><b>Mobile App Development</b></h3><br>
+                <p>We develop cross-platform mobile applications that are both functional and aesthetic.</p>
+            </div>
+            <div class="service-card">
+                <h3><b>SEO Optimization</b></h3><br>
+                <p>We optimize your site for search engines to improve visibility and ranking.</p>
+            </div>
+        </div>
+    </section>
+    <section id="knowme" class="knowme-section">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2><b>know me</b></h2>
+        <div class="knowme-grid">
+            <div class="know-card">
+                <h3><b>My State and City ?</b></h3><br>
+                <p>I hail from the enchanting state of Tripura in India, with my roots firmly planted in the vibrant city of Agartala. Known for its scenic beauty and rich cultural heritage, Agartala is where I call home.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>My Education ?</b></h3><br>
+                <p>I pursued my education with a focus on technology and programming, laying a strong foundation for my career. My academic journey has equipped me with essential about in full stack development, driving my passion for coding and innovation.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>My Dream ?</b></h3><br>
+                <p>My dream is to revolutionize the tech industry by leveraging artificial intelligence and cutting-edge technologies. I aspire to create impactful solutions that enhance everyday life and contribute to the advancement of digital innovation.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>What I'M Doing Now ?</b></h3><br>
+                <p>I’m working as a full stack developer, building cutting-edge web applications and engaging with tech enthusiasts through my Telegram channel. Every day, I dive into coding challenges and explore new technologies, all while sharing valuable insights and updates with my audience.</p>
+            <div>
+        </div>
+    </section>
+    <footer class="footer">
+        <h3><b>
+            © <span id="currentYear"></span> 
+            <a href="https://youtube.com/@WerDevelopers" style="color: red; text-decoration: none;">
+            WeRDevelopers
+            </a>
+        </b></h3>
+        <div class="social-media">
+            <a href="https://youtube.com/@WerDevelopers" target="_blank" class="social-icon">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://instagram.com/WerDeveloper" target="_blank" class="social-icon">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://telegram.me/WerDevelopers" target="_blank" class="social-icon">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://github.com/WerDevelopers" target="_blank" class="social-icon">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!--This code was created by WerDeveloper.
+Unauthorized copying, distribution, or modification of this code, in whole or in part, is strictly prohibited without prior written permission.
+Please do not remove or alter the credit to the original creator. If you wish to use this code for personal or commercial purposes, kindly contact the creator for permissions.
+Thank you for respecting the work and effort that went into creating this code.-->
