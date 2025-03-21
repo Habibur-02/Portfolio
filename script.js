@@ -1,8 +1,3 @@
-// This code was created by WerDeveloper.
-// Unauthorized copying, distribution, or modification of this code, in whole or in part, is strictly prohibited without prior written permission.
-// Please do not remove or alter the credit to the original creator. If you wish to use this code for personal or commercial purposes, kindly contact the creator for permissions.
-// Thank you for respecting the work and effort that went into creating this code.
-
 
 // Typing Effect
 var typed = new Typed('#wrd', {
@@ -83,9 +78,3 @@ function autoSlide() {
 }
 
 setInterval(autoSlide, slideInterval);
-
-
-// This code was created by WerDeveloper.
-// Unauthorized copying, distribution, or modification of this code, in whole or in part, is strictly prohibited without prior written permission.
-// Please do not remove or alter the credit to the original creator. If you wish to use this code for personal or commercial purposes, kindly contact the creator for permissions.
-// Thank you for respecting the work and effort that went into creating this code.
