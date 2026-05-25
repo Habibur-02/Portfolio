@@ -58,7 +58,7 @@ const DATA = {
           end: '',
         },
       ],
-      tags: ['LLM', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT', 'RAG'],
+      tags: ['VLM', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT', 'RAG'],
     },
   ],
 
@@ -74,7 +74,7 @@ const DATA = {
         'Developed real-time analytics dashboards showing issue trends, priority distribution, and resolution metrics.',
         'Designed a modular, production-ready AI pipeline suitable for local deployment.',
       ],
-      tags: ['Streamlit', 'SQLite', 'ML', 'NLP', 'Python'],
+      tags: ['FastAPI', 'Streamlit', 'SQLite', 'ML', 'NLP', 'Python'],
       link: 'https://github.com/Habibur-02',
     },
     {
@@ -106,19 +106,19 @@ const DATA = {
       role: 'Political Meme Classification . Team RUET_TukTuk',
       description:
         'Built an image-based political meme detection system using CNN and vision-language models (VLMs) to classify political vs. non-political memes.',
-      result: 'Result: Top 20 of 150 teams',
+      result: 'Result: Finalist of 150 teams',
     },
     {
       name: 'HackTheAI 2025',
       role: 'AI Civic Feedback Project · Team Backprop',
       description: 'Built AI Civic Feedback Project for solving social problems in Bangladesh.',
-      result: 'Result:  Finalist, Top 50 of 250',
+      result: 'Result: Top 20 of 250',
     },
     {
       name: 'AI Engineering Hackathon 2025',
-      role: 'Intent-Based Search System',
+      role: 'Intent-Based Search System ',
       description: 'Developed an Intent-Based Searching System using NLP techniques.',
-      result: 'Result: Top 50',
+      result: 'Result: Top 30',
     },
   ],
 
@@ -173,7 +173,7 @@ function Hero() {
       <div className="container">
         <FadeIn>
           <h1 className="hero-name">{DATA.name}</h1>
-          <p className="hero-role">{DATA.role} · AI/ML Engineer Intern @ Delineate (YC W25)</p>
+          {/* <p className="hero-role">{DATA.role} · AI/ML Engineer Intern @ Delineate (YC W25)</p> */}
           <div className="hero-meta">
             <span className="hero-meta-item">
               <span className="hero-meta-icon">●</span> {DATA.location}
@@ -270,7 +270,7 @@ function Skills() {
     { title: 'Frameworks & Libraries', content: 'PyTorch, Pandas, NumPy, Matplotlib, Seaborn, scikit-learn' },
     { title: 'Backend & APIs', content: 'FastAPI, RESTful API Design, API Testing (Postman)' },
     { title: 'Databases', content: 'MySQL, PostgreSQL' },
-    { title: 'Cloud & Deployment', content: 'AWS SageMaker, Modal, A10G GPUs' },
+    { title: 'Cloud & Deployment', content: 'AWS SageMaker, Modal, MinerU' },
   ];
   return (
     <section id="skills">
