@@ -1,95 +1,44 @@
 # Md Habibur Rahman — Portfolio
 
-Personal portfolio site. Built with Vite + React + Framer Motion.
+Personal portfolio. Vite + React + Framer Motion. **Single font (Inter), recruiter-friendly format.**
 
-## Design
+## Sections (in order)
 
-**Aesthetic:** Editorial × Terminal. Serif display (Instrument Serif), monospace data labels (JetBrains Mono), warm dark background, single amber accent. Generous whitespace. Big numbers for impact. Asymmetric grid breaks the cookie-cutter "dark blue + yellow CS portfolio" look.
+1. **Hero** — Name, role, location, summary, CTAs (Resume, Email, GitHub, LinkedIn)
+2. **Work Experience** — Delineate (YC W25) with 4 metric-driven bullet points
+3. **Education** — RUET + coursework
+4. **Technical Skills** — 6 grouped cards (Languages, AI/ML, Frameworks, Backend, DB, Cloud)
+5. **Projects** — Civic Feedback Platform + SmartNutriPlan
+6. **Hackathons & Competitions** — 4 hackathons (BUET, CUET, HackTheAI, AI Engineering)
+7. **Achievements** — ICSC, ICPC (table style)
+8. **Competitive Programming** — Codeforces (484), LeetCode (100), VirtualJudge (170)
+9. **Get In Touch** — Email, Phone, Location, LinkedIn
 
-**Sections:**
-1. **Hero** — Name, role, status line, CTA buttons
-2. **Stats strip** — 484 CF, 750+ problems, 90.6% model accuracy, $0.005/inference
-3. **Selected Work** — Featured: Delineate (YC W25) Qwen2.5-VL fine-tuning
-4. **Projects** — 4 project cards (SmartNutriPlan, Civic Feedback, Bengali Diarization, Meme Classifier)
-5. **Track Record** — Achievements timeline (ICSC, hackathons, ICPC)
-6. **Toolkit** — Editorial paragraph-style skills (not boring chips)
-7. **Contact** — Email, GitHub, LinkedIn, Codeforces, LeetCode
+Clear separation. No mixing AI work with hackathons.
 
 ## Run locally
 
-```bash
+\`\`\`bash
 npm install
-npm run dev      # → http://localhost:5173
-npm run build    # → dist/ folder
-npm run preview  # preview the production build
-```
+npm run dev      # http://localhost:5173
+npm run build    # produces dist/
+\`\`\`
 
 ## Edit content
 
-**One file, one object.** Open `src/App.jsx` — everything is in the `DATA` constant at the top. Change names, links, projects, stats. Save. Hot reloads.
+Open \`src/App.jsx\` — top of file has \`DATA = { ... }\`. All names, links, projects, bullets, tags live there.
 
 ## Deploy
 
-### Option 1: Vercel (easiest, recommended)
-1. Push this repo to GitHub
-2. Go to [vercel.com](https://vercel.com) → import repo → deploy. Done.
-3. Free, custom domain, auto-deploy on push.
+**Vercel (easiest):** push to GitHub → import on vercel.com → done.
 
-### Option 2: GitHub Pages
-1. Install: `npm install --save-dev gh-pages` (already in package.json)
-2. Edit `vite.config.js`: change `base: '/'` → `base: '/your-repo-name/'`
-3. Edit `package.json`: add `"homepage": "https://USERNAME.github.io/REPO-NAME"`
-4. Run: `npm run deploy`
-5. In GitHub repo settings → Pages → source: `gh-pages` branch
-
-### Option 3: Netlify
-1. Push to GitHub
-2. Connect on [netlify.com](https://netlify.com), build command `npm run build`, publish dir `dist`
+**GitHub Pages:** Edit \`vite.config.js\` base to \`/REPO-NAME/\`, then \`npm run deploy\`.
 
 ## Add your resume
 
-Drop `resume.pdf` in the `public/` folder. The "Resume / CV" button in the hero already links to `/resume.pdf`.
+Drop \`resume.pdf\` in \`public/\` folder. "Download Resume" button auto-links to it.
 
-## Customize the accent color
+## Customize
 
-In `src/styles.css`, line 9:
-```css
---accent: #ffae3b;  /* warm amber */
-```
-Try `#4ade80` (terminal green), `#ff6b6b` (coral), `#a78bfa` (purple), `#60a5fa` (electric blue).
-
-## Customize fonts
-
-In `index.html`, line 11 — swap the Google Fonts URL. Try:
-- `Fraunces` instead of Instrument Serif (more characterful)
-- `Geist Mono` instead of JetBrains Mono
-- `Newsreader` for serif with optical sizing
-
-Then update `src/styles.css` font-family variables.
-
-## File structure
-
-```
-habib-portfolio/
-├── index.html              # Fonts + meta
-├── vite.config.js
-├── package.json
-├── public/
-│   └── (drop resume.pdf here)
-└── src/
-    ├── main.jsx            # Entry
-    ├── App.jsx             # ALL CONTENT + COMPONENTS (one file)
-    └── styles.css          # ALL STYLES (one file)
-```
-
-Two files to edit. That's it.
-
-## What's different vs the previous portfolio?
-
-- Replaced generic dark-blue + yellow theme with editorial warm-dark + amber
-- Big Instrument Serif headlines instead of bland sans-serif
-- Asymmetric layout, generous whitespace
-- Featured Delineate work prominently (it's CV-gold, deserves more space)
-- Removed cliché emojis as section icons
-- Stats strip front-loads achievement numbers
-- Single-file content editing (no hunting through components)
+\`src/styles.css\` line 11 — change \`--accent: #4f8cf7;\` to any hex color.
+Try: \`#10b981\` (green), \`#a855f7\` (purple), \`#f59e0b\` (amber).
