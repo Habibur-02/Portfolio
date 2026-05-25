@@ -30,7 +30,7 @@ const DATA = {
     {
       title: 'AI Engineer Intern',
       company: 'Delineate (YC W25)',
-      location: 'Massachusetts, USA — Remote',
+      location: '                                Massachusetts, USA — Remote',
       period: 'Feb 2026 — Present',
       bullets: [
         {
