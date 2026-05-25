@@ -58,7 +58,7 @@ const DATA = {
           end: '',
         },
       ],
-      tags: ['Qwen2.5-VL', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT'],
+      tags: ['LLM', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT', 'RAG'],
     },
   ],
 
@@ -74,7 +74,7 @@ const DATA = {
         'Developed real-time analytics dashboards showing issue trends, priority distribution, and resolution metrics.',
         'Designed a modular, production-ready AI pipeline suitable for local deployment.',
       ],
-      tags: ['Streamlit', 'SQLite', 'Gemini 2.5', 'NLP', 'Python'],
+      tags: ['Streamlit', 'SQLite', 'ML', 'NLP', 'Python'],
       link: 'https://github.com/Habibur-02',
     },
     {
@@ -99,26 +99,26 @@ const DATA = {
       role: 'Bengali Speaker Diarization · Team DeadNeuronSocity',
       description:
         'Developed a Bengali speaker diarization model on Kaggle to accurately identify and generate speaker-wise time segments for long-form conversational audio.',
-      result: '6th Place (Challenge 2)',
+      result: 'Result: 6th Place (Challenge 2)',
     },
     {
       name: 'CUET CSE Fest 2025 — Datathon',
-      role: 'Political Meme Classification',
+      role: 'Political Meme Classification . Team RUET_TukTuk',
       description:
         'Built an image-based political meme detection system using CNN and vision-language models (VLMs) to classify political vs. non-political memes.',
-      result: 'Top 20 of 150 teams',
+      result: 'Result: Top 20 of 150 teams',
     },
     {
       name: 'HackTheAI 2025',
       role: 'AI Civic Feedback Project · Team Backprop',
       description: 'Built AI Civic Feedback Project for solving social problems in Bangladesh.',
-      result: 'Finalist, Top 50 of 250',
+      result: 'Result:  Finalist, Top 50 of 250',
     },
     {
       name: 'AI Engineering Hackathon 2025',
       role: 'Intent-Based Search System',
       description: 'Developed an Intent-Based Searching System using NLP techniques.',
-      result: 'Top 50',
+      result: 'Result: Top 50',
     },
   ],
 
