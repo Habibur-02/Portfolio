@@ -1,108 +1,136 @@
 import { motion } from 'framer-motion';
 
 /* =========================================================
-   CONFIGURE YOUR PORTFOLIO HERE
-   All content is in this object — edit values, save, done.
+   ALL CONTENT — edit here
    ========================================================= */
 const DATA = {
   name: 'Md Habibur Rahman',
   role: 'AI Engineer',
   location: 'Rajshahi, Bangladesh',
-  status: 'Available Q3 2026',
   email: 'habibur.ruet10@gmail.com',
+  phone: '+8801748150901',
   github: 'https://github.com/Habibur-02',
   linkedin: 'https://www.linkedin.com/in/habibur02/',
-  codeforces: 'https://codeforces.com/profile/Habibur-02',
-  leetcode: 'https://leetcode.com/u/Habibur-02/',
-  resumeUrl: '/resume.pdf', // Drop your PDF in /public folder
+  codeforcesUrl: 'https://codeforces.com/profile/Habibur-02',
+  leetcodeUrl: 'https://leetcode.com/u/Habibur-02/',
+  vjudgeUrl: 'https://vjudge.net/user/Habibur-02',
+  resumeUrl: '/resume.pdf', // drop your PDF in /public
 
-  tagline:
-    'Building vision-language models that reason about charts, documents, and the visual structure of information.',
+  summary:
+    'BSc Computer Science & Engineering student at RUET (expected May 2026). Currently working as AI Engineer Intern at Delineate (Y Combinator W25), specializing in vision-language model fine-tuning, RAG, and end-to-end ML pipelines on AWS SageMaker and Modal.',
 
-  stats: [
-    { num: '484', label: 'Codeforces' },
-    { num: '750+', label: 'Problems Solved' },
-    { num: '90.6%', label: 'Model Accuracy' },
-    { num: '$0.005', label: 'Cost / Inference' },
-  ],
-
-  featured: {
-    company: 'Delineate',
-    companyMeta: 'YC W25 · Massachusetts, USA · Remote',
-    role: 'AI Engineer Intern',
-    period: 'Feb 2026 — Present',
-    title: 'Fine-tuned a 7B vision-language model to outperform commercial LLMs on chart reasoning.',
-    highlights: [
-      {
-        bold: 'Complex chart reasoning.',
-        rest: ' Fine-tuned Qwen2.5-VL-7B with LoRA adapters for chart-data consistency verification on synthetic pharmaceutical line charts — achieving',
-        metric: ' 90.6% balanced accuracy and 100% precision',
-        end: ' on error detection.',
-      },
-      {
-        bold: 'Beat the Gemini 3.1 Preview Lite API.',
-        rest: ' Built a DaViT-based classifier for line vs. spider plot detection. Outperformed Gemini by',
-        metric: ' 0.31%',
-        end: ' on a custom benchmark dataset.',
-      },
-      {
-        bold: 'Production inference.',
-        rest: ' Deployed as a Modal cloud function with a hybrid OCR + Levenshtein fuzzy-matching pipeline. Handles single and batch requests on A10G GPUs at',
-        metric: ' ~$0.005 / request.',
-        end: '',
-      },
-      {
-        bold: 'End-to-end pipeline.',
-        rest: ' Architected reproducible training runs on AWS SageMaker with AdamW-8bit, synthetic dataset filtering (22K samples), JSON-weighted custom loss for structured outputs, and stratified validation.',
-        metric: '',
-        end: '',
-      },
-    ],
+  education: {
+    degree: 'BSc in Computer Science & Engineering',
+    school: 'Rajshahi University of Engineering & Technology (RUET)',
+    period: 'March 2022 — Expected May 2026',
+    coursework: 'Data Structures, Algorithms, Database, OOP, Machine Learning, Operating Systems, Artificial Intelligence',
   },
+
+  experience: [
+    {
+      title: 'AI Engineer Intern',
+      company: 'Delineate (YC W25)',
+      location: 'Massachusetts, USA — Remote',
+      period: 'Feb 2026 — Present',
+      bullets: [
+        {
+          bold: 'Complex Chart Reasoning:',
+          rest: ' Fine-tuned Qwen2.5-VL-7B with LoRA adapters for chart-data consistency verification on synthetic pharmaceutical line charts. Achieved',
+          metric: ' 90.6% balanced binary accuracy and 100% precision',
+          end: ' on error detection.',
+        },
+        {
+          bold: 'Outperformed Commercial LLMs:',
+          rest: ' Built a DaViT-based chart classifier for line vs. spider plot detection. Benchmarked against Gemini 3.1 Preview Lite API and outperformed it by',
+          metric: ' 0.31% accuracy',
+          end: '.',
+        },
+        {
+          bold: 'Optimized Cloud Deployment:',
+          rest: ' Deployed model as Modal cloud function with hybrid OCR + Levenshtein fuzzy matching pipeline. Handles single and batch inference on A10G GPUs at',
+          metric: ' ~$0.005/request',
+          end: '.',
+        },
+        {
+          bold: 'End-to-End ML Pipeline:',
+          rest: ' Architected reproducible training on AWS SageMaker with AdamW-8bit, synthetic dataset filtering (22K samples), JSON-weighted custom loss, and stratified validation.',
+          metric: '',
+          end: '',
+        },
+      ],
+      tags: ['Qwen2.5-VL', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT'],
+    },
+  ],
 
   projects: [
     {
-      title: 'SmartNutriPlan',
-      subtitle: 'AI-Powered Nutrition Recommendation System',
-      desc:
-        'End-to-end AI nutrition system trained on 8,789 food items × 77 attributes. Disease-specific scoring algorithms, KMeans clustering for similarity, integrated LLM chatbot for personalized meal plans.',
-      tags: ['Python', 'KMeans', 'LLM', 'Streamlit'],
+      title: 'AI-Powered Civic Feedback & Governance Platform',
+      subtitle: 'HackTheAI 2025 Project',
+      description:
+        'AI-driven civic feedback system to analyze, prioritize, and manage citizen reports for local government use.',
+      bullets: [
+        'Built with Streamlit and SQLite for analyzing and prioritizing citizen feedback.',
+        'Integrated Google Gemini 2.5 Flash for categorization, urgency scoring, spam detection, and automated guidance with local NLP fallback.',
+        'Developed real-time analytics dashboards showing issue trends, priority distribution, and resolution metrics.',
+        'Designed a modular, production-ready AI pipeline suitable for local deployment.',
+      ],
+      tags: ['Streamlit', 'SQLite', 'Gemini 2.5', 'NLP', 'Python'],
       link: 'https://github.com/Habibur-02',
     },
     {
-      title: 'Civic Feedback & Governance',
-      subtitle: 'HackTheAI 2025 — Finalist (Top 50 / 250)',
-      desc:
-        'AI-driven civic feedback platform analyzing citizen reports. Integrated Gemini 2.5 Flash for categorization, urgency scoring, spam detection, with local NLP fallback. Real-time analytics dashboards for issue trends.',
-      tags: ['Streamlit', 'SQLite', 'Gemini 2.5', 'NLP'],
+      title: 'SmartNutriPlan — AI Nutrition Recommendation System',
+      subtitle: 'Personal Project, 2025',
+      description:
+        'End-to-end AI-driven nutrition recommendation system for personalized meal planning.',
+      bullets: [
+        'Trained on a real-world dataset of 8,789 food items with 77 nutritional attributes.',
+        'Designed disease-specific nutrient scoring algorithms to generate personalized food and meal plans.',
+        'Applied KMeans clustering to identify nutritionally similar foods.',
+        'Integrated an LLM-powered nutrition chatbot for interactive guidance.',
+      ],
+      tags: ['Python', 'KMeans', 'LLM', 'Streamlit', 'scikit-learn'],
       link: 'https://github.com/Habibur-02',
     },
+  ],
+
+  hackathons: [
     {
-      title: 'Bengali Speaker Diarization',
-      subtitle: 'BUET CSE Fest 2026 — 6th Place',
-      desc:
-        'Deep learning model for speaker diarization on long-form conversational Bengali audio. Generates speaker-wise time segments. Team DeadNeuronSocity, ranked 6th in the speaker diarization challenge.',
-      tags: ['PyTorch', 'Audio ML', 'Kaggle'],
-      link: 'https://github.com/Habibur-02',
+      name: 'BUET CSE Fest 2026 — DL Sprint 4.0',
+      role: 'Bengali Speaker Diarization · Team DeadNeuronSocity',
+      description:
+        'Developed a Bengali speaker diarization model on Kaggle to accurately identify and generate speaker-wise time segments for long-form conversational audio.',
+      result: '6th Place (Challenge 2)',
     },
     {
-      title: 'Political Meme Classifier',
-      subtitle: 'CUET CSE Fest 2025 Datathon — Top 20 / 150',
-      desc:
-        'Image-based classification system distinguishing political vs. non-political memes. Combined CNN architectures with vision-language models (VLMs) on a custom-labeled dataset.',
-      tags: ['CNN', 'VLM', 'Computer Vision'],
-      link: 'https://github.com/Habibur-02',
+      name: 'CUET CSE Fest 2025 — Datathon',
+      role: 'Political Meme Classification',
+      description:
+        'Built an image-based political meme detection system using CNN and vision-language models (VLMs) to classify political vs. non-political memes.',
+      result: 'Top 20 of 150 teams',
+    },
+    {
+      name: 'HackTheAI 2025',
+      role: 'AI Civic Feedback Project · Team Backprop',
+      description: 'Built AI Civic Feedback Project for solving social problems in Bangladesh.',
+      result: 'Finalist, Top 50 of 250',
+    },
+    {
+      name: 'AI Engineering Hackathon 2025',
+      role: 'Intent-Based Search System',
+      description: 'Developed an Intent-Based Searching System using NLP techniques.',
+      result: 'Top 50',
     },
   ],
 
   achievements: [
-    { year: '2026', title: 'BUET CSE Fest — DL Sprint 4.0', sub: 'Bengali Speaker Diarization · Team DeadNeuronSocity', result: '6th Place' },
-    { year: '2026', title: 'AI Engineer Intern @ Delineate', sub: 'YC W25 · Remote', result: 'Current' },
-    { year: '2025', title: 'International Computer Science Competition (ICSC)', sub: 'Global qualifier round', result: 'Pre-final' },
-    { year: '2025', title: 'HackTheAI 2025', sub: 'AI Civic Feedback Project · Team Backprop', result: 'Top 50 / 250' },
-    { year: '2025', title: 'CUET CSE Fest Datathon', sub: 'Political Meme Classification', result: 'Top 20 / 150' },
-    { year: '2025', title: 'AI Engineering Hackathon', sub: 'Intent-Based Search System', result: 'Top 50' },
-    { year: '2022', title: 'ICPC Asia Regional Preliminary', sub: 'Solved 3 problems', result: '167th Nationally' },
+    { year: '2025', title: 'International Computer Science Competition (ICSC)', result: 'Pre-final round' },
+    { year: '2022', title: 'ICPC Asia Regional Preliminary — Solved 3 problems', result: '167th Nationally' },
+  ],
+
+  profiles: [
+    { platform: 'Codeforces', handle: 'Habibur-02', count: '484', label: 'problems', url: 'https://codeforces.com/profile/Habibur-02' },
+    { platform: 'LeetCode', handle: 'Habibur-02', count: '100', label: 'problems', url: 'https://leetcode.com/u/Habibur-02/' },
+    { platform: 'VirtualJudge', handle: 'Habibur-02', count: '170', label: 'problems', url: 'https://vjudge.net/user/Habibur-02' },
   ],
 };
 
@@ -110,13 +138,13 @@ const DATA = {
    COMPONENTS
    ========================================================= */
 
-function FadeIn({ children, delay = 0, y = 16 }) {
+function FadeIn({ children, delay = 0 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.4, delay, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
@@ -127,14 +155,12 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="nav-brand">
-          <span className="nav-brand-symbol">◐</span>
-          habibur.rahman
-        </a>
+        <a href="#top" className="nav-brand">Md Habibur Rahman</a>
         <div className="nav-links">
-          <a href="#work" className="nav-link">work</a>
-          <a href="#projects" className="nav-link">projects</a>
-          <a href="#contact" className="nav-link">contact</a>
+          <a href="#experience" className="nav-link">Experience</a>
+          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#hackathons" className="nav-link">Hackathons</a>
+          <a href="#contact" className="nav-link">Contact</a>
         </div>
       </div>
     </nav>
@@ -146,35 +172,27 @@ function Hero() {
     <header id="top" className="hero">
       <div className="container">
         <FadeIn>
+          <h1 className="hero-name">{DATA.name}</h1>
+          <p className="hero-role">{DATA.role} · AI/ML Engineer Intern @ Delineate (YC W25)</p>
           <div className="hero-meta">
-            <span>{DATA.role}</span>
-            <span>{DATA.location}</span>
-            <span>{DATA.status}</span>
+            <span className="hero-meta-item">
+              <span className="hero-meta-icon">●</span> {DATA.location}
+            </span>
+            <span className="hero-meta-item">
+              <span className="hero-meta-icon">●</span> BSc CSE @ RUET (2022 — 2026)
+            </span>
+            <span className="hero-meta-item">
+              <span className="hero-meta-icon">●</span> Available for full-time roles
+            </span>
           </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h1 className="hero-title">
-            Md Habibur<br />
-            <em>Rahman.</em>
-          </h1>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <p className="hero-tagline">{DATA.tagline}</p>
-        </FadeIn>
-
-        <FadeIn delay={0.3}>
+          <p className="hero-summary">{DATA.summary}</p>
           <div className="hero-cta">
-            <a href="#work" className="btn btn-primary">
-              View work →
+            <a href={DATA.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              📄 Download Resume
             </a>
-            <a href={DATA.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn">
-              Resume / CV
-            </a>
-            <a href={DATA.github} target="_blank" rel="noopener noreferrer" className="btn">
-              GitHub ↗
-            </a>
+            <a href={`mailto:${DATA.email}`} className="btn">✉ Email</a>
+            <a href={DATA.github} target="_blank" rel="noopener noreferrer" className="btn">GitHub ↗</a>
+            <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer" className="btn">LinkedIn ↗</a>
           </div>
         </FadeIn>
       </div>
@@ -182,61 +200,93 @@ function Hero() {
   );
 }
 
-function Stats() {
+function Experience() {
   return (
-    <FadeIn>
+    <section id="experience">
       <div className="container">
-        <div className="stats">
-          {DATA.stats.map((s, i) => (
-            <div key={i} className="stat">
-              <div className="stat-num">
-                <em>{s.num}</em>
+        <FadeIn>
+          <h2 className="section-title">Work Experience</h2>
+        </FadeIn>
+        {DATA.experience.map((e, i) => (
+          <FadeIn key={i} delay={0.05 * i}>
+            <article className="item">
+              <div className="item-header">
+                <div>
+                  <div className="item-title">{e.title}</div>
+                  <div className="item-subtitle">{e.company} · {e.location}</div>
+                </div>
+                <div className="item-meta">{e.period}</div>
               </div>
-              <div className="stat-label">{s.label}</div>
-            </div>
-          ))}
-        </div>
+              <ul className="item-bullets">
+                {e.bullets.map((b, j) => (
+                  <li key={j}>
+                    <strong>{b.bold}</strong>
+                    {b.rest}
+                    {b.metric && <span className="metric">{b.metric}</span>}
+                    {b.end}
+                  </li>
+                ))}
+              </ul>
+              <div className="item-tags">
+                {e.tags.map((t) => (<span key={t} className="tag">{t}</span>))}
+              </div>
+            </article>
+          </FadeIn>
+        ))}
       </div>
-    </FadeIn>
+    </section>
   );
 }
 
-function Work() {
-  const f = DATA.featured;
+function EducationSection() {
+  const e = DATA.education;
   return (
-    <section id="work">
+    <section id="education">
       <div className="container">
         <FadeIn>
-          <div className="section-label">Selected Work</div>
+          <h2 className="section-title">Education</h2>
         </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="section-heading">
-            Currently shipping AI <em>at a YC company.</em>
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <article className="feature-card">
-            <div className="feature-meta">
-              <span>{f.companyMeta}</span>
-              <span className="feature-badge">{f.period}</span>
+        <FadeIn delay={0.05}>
+          <div className="edu-item">
+            <div className="edu-degree">{e.degree}</div>
+            <div className="edu-school">{e.school}</div>
+            <div className="edu-meta">
+              <span>{e.period}</span>
             </div>
+            <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.75rem' }}>
+              <strong style={{ color: 'var(--text)' }}>Coursework:</strong> {e.coursework}
+            </p>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
 
-            <h3 className="feature-title">{f.title}</h3>
-            <p className="feature-company">{f.role} · {f.company}</p>
-
-            <ul className="feature-highlights">
-              {f.highlights.map((h, i) => (
-                <li key={i}>
-                  <strong>{h.bold}</strong>
-                  {h.rest}
-                  {h.metric && <span className="metric">{h.metric}</span>}
-                  {h.end}
-                </li>
-              ))}
-            </ul>
-          </article>
+function Skills() {
+  const groups = [
+    { title: 'Programming Languages', content: 'C++, Python, Golang, C' },
+    { title: 'AI & Machine Learning', content: 'Generative AI (GANs, VAE), Retrieval-Augmented Generation (RAG), Neural Networks, CNN, RNN, LSTM' },
+    { title: 'Frameworks & Libraries', content: 'PyTorch, Pandas, NumPy, Matplotlib, Seaborn, scikit-learn' },
+    { title: 'Backend & APIs', content: 'FastAPI, RESTful API Design, API Testing (Postman)' },
+    { title: 'Databases', content: 'MySQL, PostgreSQL' },
+    { title: 'Cloud & Deployment', content: 'AWS SageMaker, Modal, A10G GPUs' },
+  ];
+  return (
+    <section id="skills">
+      <div className="container">
+        <FadeIn>
+          <h2 className="section-title">Technical Skills</h2>
+        </FadeIn>
+        <FadeIn delay={0.05}>
+          <div className="skills-grid">
+            {groups.map((g) => (
+              <div key={g.title} className="skill-group">
+                <div className="skill-group-title">{g.title}</div>
+                <div className="skill-group-content">{g.content}</div>
+              </div>
+            ))}
+          </div>
         </FadeIn>
       </div>
     </section>
@@ -248,42 +298,62 @@ function Projects() {
     <section id="projects">
       <div className="container">
         <FadeIn>
-          <div className="section-label">Projects</div>
+          <h2 className="section-title">Projects</h2>
         </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="section-heading">
-            Things I&apos;ve built <em>and learned from.</em>
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <div className="project-grid">
-            {DATA.projects.map((p, i) => (
-              <a
-                key={i}
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project"
-              >
-                <div className="project-num">
-                  {String(i + 1).padStart(2, '0')} / {String(DATA.projects.length).padStart(2, '0')}
+        {DATA.projects.map((p, i) => (
+          <FadeIn key={i} delay={0.05 * i}>
+            <article className="item">
+              <div className="item-header">
+                <div>
+                  <div className="item-title">{p.title}</div>
+                  <div className="item-subtitle">{p.subtitle}</div>
                 </div>
-                <h3 className="project-title">{p.title}</h3>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--fg-dim)', marginBottom: '1rem', letterSpacing: '0.05em' }}>
-                  {p.subtitle}
-                </p>
-                <p className="project-desc">{p.desc}</p>
-                <div className="project-tags">
-                  {p.tags.map((t) => (
-                    <span key={t} className="project-tag">{t}</span>
-                  ))}
+              </div>
+              <p className="item-description">{p.description}</p>
+              <ul className="item-bullets">
+                {p.bullets.map((b, j) => (<li key={j}>{b}</li>))}
+              </ul>
+              <div className="item-tags">
+                {p.tags.map((t) => (<span key={t} className="tag">{t}</span>))}
+              </div>
+              {p.link && (
+                <div className="item-links">
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                    View on GitHub →
+                  </a>
                 </div>
-              </a>
-            ))}
-          </div>
+              )}
+            </article>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Hackathons() {
+  return (
+    <section id="hackathons">
+      <div className="container">
+        <FadeIn>
+          <h2 className="section-title">Hackathons & Competitions</h2>
         </FadeIn>
+        {DATA.hackathons.map((h, i) => (
+          <FadeIn key={i} delay={0.04 * i}>
+            <article className="item">
+              <div className="item-header">
+                <div>
+                  <div className="item-title">{h.name}</div>
+                  <div className="item-subtitle">{h.role}</div>
+                </div>
+                <div className="item-meta" style={{ color: 'var(--success)', fontWeight: 600 }}>
+                  {h.result}
+                </div>
+              </div>
+              <p className="item-description" style={{ marginBottom: 0 }}>{h.description}</p>
+            </article>
+          </FadeIn>
+        ))}
       </div>
     </section>
   );
@@ -294,27 +364,15 @@ function Achievements() {
     <section id="achievements">
       <div className="container">
         <FadeIn>
-          <div className="section-label">Track Record</div>
+          <h2 className="section-title">Achievements</h2>
         </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="section-heading">
-            Competitions, hackathons, <em>and milestones.</em>
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <div className="achievement-list">
+        <FadeIn delay={0.05}>
+          <div className="ach-list">
             {DATA.achievements.map((a, i) => (
-              <div key={i} className="achievement">
-                <div className="achievement-year">{a.year}</div>
-                <div>
-                  <div className="achievement-title">
-                    {a.title}
-                    <small>{a.sub}</small>
-                  </div>
-                </div>
-                <div className="achievement-result">{a.result}</div>
+              <div key={i} className="ach-row">
+                <span className="ach-year">{a.year}</span>
+                <span className="ach-title">{a.title}</span>
+                <span className="ach-result">{a.result}</span>
               </div>
             ))}
           </div>
@@ -324,55 +382,23 @@ function Achievements() {
   );
 }
 
-function Skills() {
+function Profiles() {
   return (
-    <section id="skills">
+    <section id="profiles">
       <div className="container">
         <FadeIn>
-          <div className="section-label">Toolkit</div>
+          <h2 className="section-title">Competitive Programming</h2>
         </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="section-heading">
-            What I work with, <em>day to day.</em>
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <div className="skills">
-            <div className="skill-block">
-              <h4>Languages</h4>
-              <p>
-                C++, Python, <span>Golang, C.</span> Strong fundamentals from competitive programming —{' '}
-                <span>484 problems on Codeforces, 100 on LeetCode, 170 on VirtualJudge.</span>
-              </p>
-            </div>
-
-            <div className="skill-block">
-              <h4>AI &amp; ML</h4>
-              <p>
-                PyTorch, scikit-learn, <span>Pandas, NumPy.</span> Building with Generative AI{' '}
-                <span>(GANs, VAEs),</span> RAG pipelines, and the full neural network toolkit —{' '}
-                <span>CNNs, RNNs, LSTMs.</span>
-              </p>
-            </div>
-
-            <div className="skill-block">
-              <h4>Backend &amp; Infra</h4>
-              <p>
-                FastAPI, RESTful API design, <span>API testing with Postman.</span> Cloud deployment via{' '}
-                <span>Modal and AWS SageMaker.</span>
-              </p>
-            </div>
-
-            <div className="skill-block">
-              <h4>Data</h4>
-              <p>
-                MySQL, PostgreSQL, <span>SQLite.</span> Visualization with{' '}
-                <span>Matplotlib and Seaborn.</span> Comfortable with both production schemas and{' '}
-                <span>quick experimental notebooks.</span>
-              </p>
-            </div>
+        <FadeIn delay={0.05}>
+          <div className="profile-grid">
+            {DATA.profiles.map((p) => (
+              <a key={p.platform} href={p.url} target="_blank" rel="noopener noreferrer" className="profile">
+                <div className="profile-platform">{p.platform}</div>
+                <div className="profile-handle">{p.handle}</div>
+                <div className="profile-count">{p.count}</div>
+                <div className="profile-count-label">{p.label}</div>
+              </a>
+            ))}
           </div>
         </FadeIn>
       </div>
@@ -381,43 +407,32 @@ function Skills() {
 }
 
 function Contact() {
-  const links = [
-    { label: 'Email', value: DATA.email, href: `mailto:${DATA.email}` },
-    { label: 'GitHub', value: '@Habibur-02', href: DATA.github },
-    { label: 'LinkedIn', value: 'habibur02', href: DATA.linkedin },
-    { label: 'Codeforces', value: 'Habibur-02', href: DATA.codeforces },
-    { label: 'LeetCode', value: 'Habibur-02', href: DATA.leetcode },
-  ];
-
   return (
-    <section id="contact" style={{ borderBottom: 'none' }}>
+    <section id="contact">
       <div className="container">
         <FadeIn>
-          <div className="section-label">Get In Touch</div>
+          <h2 className="section-title">Get In Touch</h2>
         </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="contact-title">
-            Let&apos;s build<br />
-            <em>something good.</em>
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <div className="contact-links">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target={l.href.startsWith('mailto') ? '_self' : '_blank'}
-                rel="noopener noreferrer"
-                className="contact-link"
-              >
-                <span className="contact-link-label">{l.label}</span>
-                <span className="contact-link-value">{l.value}</span>
-                <span className="contact-arrow">→</span>
-              </a>
-            ))}
+        <FadeIn delay={0.05}>
+          <div className="item">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+              <div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Email</div>
+                <a href={`mailto:${DATA.email}`} style={{ color: 'var(--accent)', fontSize: '0.9375rem' }}>{DATA.email}</a>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Phone</div>
+                <span style={{ fontSize: '0.9375rem' }}>{DATA.phone}</span>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Location</div>
+                <span style={{ fontSize: '0.9375rem' }}>{DATA.location}</span>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>LinkedIn</div>
+                <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: '0.9375rem' }}>habibur02</a>
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>
@@ -428,9 +443,8 @@ function Contact() {
 function Footer() {
   return (
     <footer>
-      <div className="container footer">
-        <span>© {new Date().getFullYear()} {DATA.name}</span>
-        <span>Designed &amp; built with React + Framer Motion</span>
+      <div className="container">
+        © {new Date().getFullYear()} {DATA.name} · Built with React + Vite
       </div>
     </footer>
   );
@@ -444,11 +458,13 @@ export default function App() {
     <>
       <Nav />
       <Hero />
-      <Stats />
-      <Work />
-      <Projects />
-      <Achievements />
+      <Experience />
+      <EducationSection />
       <Skills />
+      <Projects />
+      <Hackathons />
+      <Achievements />
+      <Profiles />
       <Contact />
       <Footer />
     </>
