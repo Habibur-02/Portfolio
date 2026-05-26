@@ -155,14 +155,11 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="nav-brand">
-          <span className="nav-brand-full">Md Habibur Rahman</span>
-          <span className="nav-brand-short">Habibur</span>
-        </a>
+        <a href="#top" className="nav-brand">Md Habibur Rahman</a>
         <div className="nav-links">
           <a href="#experience" className="nav-link">Experience</a>
-          <a href="#hackathons" className="nav-link secondary">Hackathons</a>
-          <a href="#projects" className="nav-link tertiary">Projects</a>
+          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#hackathons" className="nav-link">Hackathons</a>
           <a href="#contact" className="nav-link">Contact</a>
         </div>
       </div>
@@ -214,7 +211,7 @@ function Experience() {
           <FadeIn key={i} delay={0.05 * i}>
             <article className="item">
               <div className="item-header">
-                <div className="item-header-main">
+                <div>
                   <div className="item-title">{e.title}</div>
                   <div className="item-subtitle">{e.company} · {e.location}</div>
                 </div>
@@ -256,8 +253,8 @@ function EducationSection() {
             <div className="edu-meta">
               <span>{e.period}</span>
             </div>
-            <p className="edu-coursework">
-              <strong>Coursework:</strong> {e.coursework}
+            <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.75rem' }}>
+              <strong style={{ color: 'var(--text)' }}>Coursework:</strong> {e.coursework}
             </p>
           </div>
         </FadeIn>
@@ -303,34 +300,32 @@ function Projects() {
         <FadeIn>
           <h2 className="section-title">Projects</h2>
         </FadeIn>
-        <div className="two-col-grid">
-          {DATA.projects.map((p, i) => (
-            <FadeIn key={i} delay={0.05 * i}>
-              <article className="item">
-                <div className="item-header">
-                  <div className="item-header-main">
-                    <div className="item-title">{p.title}</div>
-                    <div className="item-subtitle">{p.subtitle}</div>
-                  </div>
+        {DATA.projects.map((p, i) => (
+          <FadeIn key={i} delay={0.05 * i}>
+            <article className="item">
+              <div className="item-header">
+                <div>
+                  <div className="item-title">{p.title}</div>
+                  <div className="item-subtitle">{p.subtitle}</div>
                 </div>
-                <p className="item-description">{p.description}</p>
-                <ul className="item-bullets">
-                  {p.bullets.map((b, j) => (<li key={j}>{b}</li>))}
-                </ul>
-                <div className="item-tags">
-                  {p.tags.map((t) => (<span key={t} className="tag">{t}</span>))}
+              </div>
+              <p className="item-description">{p.description}</p>
+              <ul className="item-bullets">
+                {p.bullets.map((b, j) => (<li key={j}>{b}</li>))}
+              </ul>
+              <div className="item-tags">
+                {p.tags.map((t) => (<span key={t} className="tag">{t}</span>))}
+              </div>
+              {p.link && (
+                <div className="item-links">
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                    View on GitHub →
+                  </a>
                 </div>
-                {p.link && (
-                  <div className="item-links">
-                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="item-link">
-                      View on GitHub →
-                    </a>
-                  </div>
-                )}
-              </article>
-            </FadeIn>
-          ))}
-        </div>
+              )}
+            </article>
+          </FadeIn>
+        ))}
       </div>
     </section>
   );
@@ -343,24 +338,22 @@ function Hackathons() {
         <FadeIn>
           <h2 className="section-title">Hackathons & Competitions</h2>
         </FadeIn>
-        <div className="two-col-grid">
-          {DATA.hackathons.map((h, i) => (
-            <FadeIn key={i} delay={0.04 * i}>
-              <article className="item">
-                <div className="item-header">
-                  <div className="item-header-main">
-                    <div className="item-title">{h.name}</div>
-                    <div className="item-subtitle">{h.role}</div>
-                  </div>
-                  <div className="item-meta" style={{ color: 'var(--success)', fontWeight: 600 }}>
-                    {h.result}
-                  </div>
+        {DATA.hackathons.map((h, i) => (
+          <FadeIn key={i} delay={0.04 * i}>
+            <article className="item">
+              <div className="item-header">
+                <div>
+                  <div className="item-title">{h.name}</div>
+                  <div className="item-subtitle">{h.role}</div>
                 </div>
-                <p className="item-description" style={{ marginBottom: 0 }}>{h.description}</p>
-              </article>
-            </FadeIn>
-          ))}
-        </div>
+                <div className="item-meta" style={{ color: 'var(--success)', fontWeight: 600 }}>
+                  {h.result}
+                </div>
+              </div>
+              <p className="item-description" style={{ marginBottom: 0 }}>{h.description}</p>
+            </article>
+          </FadeIn>
+        ))}
       </div>
     </section>
   );
@@ -422,26 +415,22 @@ function Contact() {
         </FadeIn>
         <FadeIn delay={0.05}>
           <div className="item">
-            <div className="contact-grid">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
               <div>
-                <div className="contact-label">Email</div>
-                <div className="contact-value">
-                  <a href={`mailto:${DATA.email}`}>{DATA.email}</a>
-                </div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Email</div>
+                <a href={`mailto:${DATA.email}`} style={{ color: 'var(--accent)', fontSize: '0.9375rem' }}>{DATA.email}</a>
               </div>
               <div>
-                <div className="contact-label">Phone</div>
-                <div className="contact-value">{DATA.phone}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Phone</div>
+                <span style={{ fontSize: '0.9375rem' }}>{DATA.phone}</span>
               </div>
               <div>
-                <div className="contact-label">Location</div>
-                <div className="contact-value">{DATA.location}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Location</div>
+                <span style={{ fontSize: '0.9375rem' }}>{DATA.location}</span>
               </div>
               <div>
-                <div className="contact-label">LinkedIn</div>
-                <div className="contact-value">
-                  <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer">habibur02</a>
-                </div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>LinkedIn</div>
+                <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: '0.9375rem' }}>habibur02</a>
               </div>
             </div>
           </div>
@@ -469,13 +458,13 @@ export default function App() {
     <>
       <Nav />
       <Hero />
-      <EducationSection />
       <Experience />
+      <EducationSection />
       <Skills />
-      <Profiles />
+      <Projects />
       <Hackathons />
       <Achievements />
-      <Projects />
+      <Profiles />
       <Contact />
       <Footer />
     </>
