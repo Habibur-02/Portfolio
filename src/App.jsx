@@ -30,7 +30,7 @@ const DATA = {
     {
       title: 'AI Engineer Intern',
       company: 'Delineate (YC W25)',
-      location: '                                Massachusetts, USA — Remote',
+      location: 'Massachusetts, USA — Remote',
       period: 'Feb 2026 — Present',
       bullets: [
         {
@@ -58,7 +58,7 @@ const DATA = {
           end: '',
         },
       ],
-      tags: ['VLM', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT', 'RAG'],
+      tags: ['Qwen2.5-VL', 'LoRA', 'PyTorch', 'AWS SageMaker', 'Modal', 'DaViT'],
     },
   ],
 
@@ -74,7 +74,7 @@ const DATA = {
         'Developed real-time analytics dashboards showing issue trends, priority distribution, and resolution metrics.',
         'Designed a modular, production-ready AI pipeline suitable for local deployment.',
       ],
-      tags: ['FastAPI', 'Streamlit', 'SQLite', 'ML', 'NLP', 'Python'],
+      tags: ['Streamlit', 'SQLite', 'Gemini 2.5', 'NLP', 'Python'],
       link: 'https://github.com/Habibur-02',
     },
     {
@@ -99,26 +99,26 @@ const DATA = {
       role: 'Bengali Speaker Diarization · Team DeadNeuronSocity',
       description:
         'Developed a Bengali speaker diarization model on Kaggle to accurately identify and generate speaker-wise time segments for long-form conversational audio.',
-      result: 'Result: 6th Place (Challenge 2)',
+      result: '6th Place (Challenge 2)',
     },
     {
       name: 'CUET CSE Fest 2025 — Datathon',
-      role: 'Political Meme Classification . Team RUET_TukTuk',
+      role: 'Political Meme Classification',
       description:
         'Built an image-based political meme detection system using CNN and vision-language models (VLMs) to classify political vs. non-political memes.',
-      result: 'Result: Finalist of 150 teams',
+      result: 'Top 20 of 150 teams',
     },
     {
       name: 'HackTheAI 2025',
       role: 'AI Civic Feedback Project · Team Backprop',
       description: 'Built AI Civic Feedback Project for solving social problems in Bangladesh.',
-      result: 'Result: Top 20 of 250',
+      result: 'Finalist, Top 50 of 250',
     },
     {
       name: 'AI Engineering Hackathon 2025',
-      role: 'Intent-Based Search System ',
+      role: 'Intent-Based Search System',
       description: 'Developed an Intent-Based Searching System using NLP techniques.',
-      result: 'Result: Top 30',
+      result: 'Top 50',
     },
   ],
 
@@ -155,11 +155,14 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="nav-brand">Md Habibur Rahman</a>
+        <a href="#top" className="nav-brand">
+          <span className="nav-brand-full">Md Habibur Rahman</span>
+          <span className="nav-brand-short">Habibur</span>
+        </a>
         <div className="nav-links">
           <a href="#experience" className="nav-link">Experience</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#hackathons" className="nav-link">Hackathons</a>
+          <a href="#hackathons" className="nav-link secondary">Hackathons</a>
+          <a href="#projects" className="nav-link tertiary">Projects</a>
           <a href="#contact" className="nav-link">Contact</a>
         </div>
       </div>
@@ -173,7 +176,7 @@ function Hero() {
       <div className="container">
         <FadeIn>
           <h1 className="hero-name">{DATA.name}</h1>
-          {/* <p className="hero-role">{DATA.role} · AI/ML Engineer Intern @ Delineate (YC W25)</p> */}
+          <p className="hero-role">{DATA.role} · AI/ML Engineer Intern @ Delineate (YC W25)</p>
           <div className="hero-meta">
             <span className="hero-meta-item">
               <span className="hero-meta-icon">●</span> {DATA.location}
@@ -211,7 +214,7 @@ function Experience() {
           <FadeIn key={i} delay={0.05 * i}>
             <article className="item">
               <div className="item-header">
-                <div>
+                <div className="item-header-main">
                   <div className="item-title">{e.title}</div>
                   <div className="item-subtitle">{e.company} · {e.location}</div>
                 </div>
@@ -253,8 +256,8 @@ function EducationSection() {
             <div className="edu-meta">
               <span>{e.period}</span>
             </div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.75rem' }}>
-              <strong style={{ color: 'var(--text)' }}>Coursework:</strong> {e.coursework}
+            <p className="edu-coursework">
+              <strong>Coursework:</strong> {e.coursework}
             </p>
           </div>
         </FadeIn>
@@ -270,7 +273,7 @@ function Skills() {
     { title: 'Frameworks & Libraries', content: 'PyTorch, Pandas, NumPy, Matplotlib, Seaborn, scikit-learn' },
     { title: 'Backend & APIs', content: 'FastAPI, RESTful API Design, API Testing (Postman)' },
     { title: 'Databases', content: 'MySQL, PostgreSQL' },
-    { title: 'Cloud & Deployment', content: 'AWS SageMaker, Modal, MinerU' },
+    { title: 'Cloud & Deployment', content: 'AWS SageMaker, Modal, A10G GPUs' },
   ];
   return (
     <section id="skills">
@@ -300,32 +303,34 @@ function Projects() {
         <FadeIn>
           <h2 className="section-title">Projects</h2>
         </FadeIn>
-        {DATA.projects.map((p, i) => (
-          <FadeIn key={i} delay={0.05 * i}>
-            <article className="item">
-              <div className="item-header">
-                <div>
-                  <div className="item-title">{p.title}</div>
-                  <div className="item-subtitle">{p.subtitle}</div>
+        <div className="two-col-grid">
+          {DATA.projects.map((p, i) => (
+            <FadeIn key={i} delay={0.05 * i}>
+              <article className="item">
+                <div className="item-header">
+                  <div className="item-header-main">
+                    <div className="item-title">{p.title}</div>
+                    <div className="item-subtitle">{p.subtitle}</div>
+                  </div>
                 </div>
-              </div>
-              <p className="item-description">{p.description}</p>
-              <ul className="item-bullets">
-                {p.bullets.map((b, j) => (<li key={j}>{b}</li>))}
-              </ul>
-              <div className="item-tags">
-                {p.tags.map((t) => (<span key={t} className="tag">{t}</span>))}
-              </div>
-              {p.link && (
-                <div className="item-links">
-                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="item-link">
-                    View on GitHub →
-                  </a>
+                <p className="item-description">{p.description}</p>
+                <ul className="item-bullets">
+                  {p.bullets.map((b, j) => (<li key={j}>{b}</li>))}
+                </ul>
+                <div className="item-tags">
+                  {p.tags.map((t) => (<span key={t} className="tag">{t}</span>))}
                 </div>
-              )}
-            </article>
-          </FadeIn>
-        ))}
+                {p.link && (
+                  <div className="item-links">
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                      View on GitHub →
+                    </a>
+                  </div>
+                )}
+              </article>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -338,22 +343,24 @@ function Hackathons() {
         <FadeIn>
           <h2 className="section-title">Hackathons & Competitions</h2>
         </FadeIn>
-        {DATA.hackathons.map((h, i) => (
-          <FadeIn key={i} delay={0.04 * i}>
-            <article className="item">
-              <div className="item-header">
-                <div>
-                  <div className="item-title">{h.name}</div>
-                  <div className="item-subtitle">{h.role}</div>
+        <div className="two-col-grid">
+          {DATA.hackathons.map((h, i) => (
+            <FadeIn key={i} delay={0.04 * i}>
+              <article className="item">
+                <div className="item-header">
+                  <div className="item-header-main">
+                    <div className="item-title">{h.name}</div>
+                    <div className="item-subtitle">{h.role}</div>
+                  </div>
+                  <div className="item-meta" style={{ color: 'var(--success)', fontWeight: 600 }}>
+                    {h.result}
+                  </div>
                 </div>
-                <div className="item-meta" style={{ color: 'var(--success)', fontWeight: 600 }}>
-                  {h.result}
-                </div>
-              </div>
-              <p className="item-description" style={{ marginBottom: 0 }}>{h.description}</p>
-            </article>
-          </FadeIn>
-        ))}
+                <p className="item-description" style={{ marginBottom: 0 }}>{h.description}</p>
+              </article>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -415,22 +422,26 @@ function Contact() {
         </FadeIn>
         <FadeIn delay={0.05}>
           <div className="item">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+            <div className="contact-grid">
               <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Email</div>
-                <a href={`mailto:${DATA.email}`} style={{ color: 'var(--accent)', fontSize: '0.9375rem' }}>{DATA.email}</a>
+                <div className="contact-label">Email</div>
+                <div className="contact-value">
+                  <a href={`mailto:${DATA.email}`}>{DATA.email}</a>
+                </div>
               </div>
               <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Phone</div>
-                <span style={{ fontSize: '0.9375rem' }}>{DATA.phone}</span>
+                <div className="contact-label">Phone</div>
+                <div className="contact-value">{DATA.phone}</div>
               </div>
               <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>Location</div>
-                <span style={{ fontSize: '0.9375rem' }}>{DATA.location}</span>
+                <div className="contact-label">Location</div>
+                <div className="contact-value">{DATA.location}</div>
               </div>
               <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>LinkedIn</div>
-                <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontSize: '0.9375rem' }}>habibur02</a>
+                <div className="contact-label">LinkedIn</div>
+                <div className="contact-value">
+                  <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer">habibur02</a>
+                </div>
               </div>
             </div>
           </div>
@@ -458,13 +469,13 @@ export default function App() {
     <>
       <Nav />
       <Hero />
-      <Experience />
       <EducationSection />
+      <Experience />
       <Skills />
-      <Projects />
+      <Profiles />
       <Hackathons />
       <Achievements />
-      <Profiles />
+      <Projects />
       <Contact />
       <Footer />
     </>
